@@ -7,9 +7,8 @@
 
   <ItemGroup>
     <Folder Include="Amazon\Medium\" />
-    <Folder Include="ByteDance\Easy\" />
+    <Folder Include="ByteDance\Medium\" />
     <Folder Include="Linkedin\" />
-    <Folder Include="Google\" />
   </ItemGroup>
 
 </Project>

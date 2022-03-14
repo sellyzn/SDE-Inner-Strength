@@ -158,11 +158,14 @@ namespace FLAMG
             //FindPeakElement fp = new FindPeakElement();
             //Console.WriteLine(fp.FindPeak(nums));
 
-            string str = "19201234567891011121314151618";
-            int n = 20;
-            FindTheMissingNumberII fm = new FindTheMissingNumberII();
-            Console.WriteLine(fm.FindMissing2(n, str));
+            //string str = "19201234567891011121314151618";
+            //int n = 20;
+            //FindTheMissingNumberII fm = new FindTheMissingNumberII();
+            //Console.WriteLine(fm.FindMissing2(n, str));
 
+            string s = ")()())";
+            var lvp = new LongestValidParentheses();
+            Console.WriteLine(lvp.LongestValidParentheses_DP(s));
 
         }        
     }
