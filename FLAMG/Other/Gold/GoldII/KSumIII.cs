@@ -43,23 +43,23 @@ namespace FLAMG.Other.Gold.GoldII
 
 
 
-        // K Sum II
-        //Given n unique postive integers, number k (1<=k<=n) and target.
-        //Find all possible k integers where their sum is target.
-        public List<List<int>> KSumII(int[] A, int k, int target)
-        {
-            // write your code here
-        }
+        //// K Sum II
+        ////Given n unique postive integers, number k (1<=k<=n) and target.
+        ////Find all possible k integers where their sum is target.
+        //public List<List<int>> KSumII(int[] A, int k, int target)
+        //{
+        //    // write your code here
+        //}
 
 
 
-        // K Sum
-        //Given n distinct positive integers, integer k (k≤n) and a number target.
-        //Find k numbers where sum is target.Calculate how many solutions there are?
-        public int KSumI(int[] A, int k, int target)
-        {
+        //// K Sum
+        ////Given n distinct positive integers, integer k (k≤n) and a number target.
+        ////Find k numbers where sum is target.Calculate how many solutions there are?
+        //public int KSumI(int[] A, int k, int target)
+        //{
             
-        }
+        //}
 
 
     }

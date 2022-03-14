@@ -81,7 +81,7 @@ namespace FLAMG.Other.Gold.GoldIII
                 );
             return rec.GetRange(0, k);
         }
-    }
+    
         
     }
 }

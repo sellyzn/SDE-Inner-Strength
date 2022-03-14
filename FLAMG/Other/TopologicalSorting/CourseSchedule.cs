@@ -87,8 +87,8 @@ namespace FLAMG.Other.TopologicalSorting
             int visited = 0;
             while(queue.Count > 0)
             {
-                visited++;
                 int u = queue.Dequeue();
+                visited++;
                 foreach (var v in edges[u])
                 {
                     indeg[v]--;
@@ -98,5 +98,55 @@ namespace FLAMG.Other.TopologicalSorting
             }
             return visited == numCourses;
         }
+
+        
+        public bool CanFinish_BFS1(int numCourses, int[][] prerequisites)
+        {
+            List<List<int>> adjacency = new List<List<int>>();
+            int[] inDegree = new int[numCourses];
+
+            for(int i = 0; i < numCourses; i++)
+            {
+                adjacency.Add(new List<int>());
+            }
+
+            //get the indegree and adjaceny of every course.
+            foreach (var info in prerequisites)
+            {
+                adjacency[info[1]].Add(info[0]);
+                inDegree[info[0]]++;
+            }
+
+            
+            Queue<int> queue = new Queue<int>();
+
+            //将入度为0的编号加入队列
+            for (int i = 0; i < numCourses; i++)
+            {
+                if (inDegree[i] == 0)
+                {
+                    queue.Enqueue(i);
+                }                    
+            }
+
+            //BFS TopoSort            
+            while(queue.Count > 0)
+            {
+                
+                int pre = queue.Dequeue();
+                numCourses--;
+                foreach (int cur in adjacency[pre])
+                {
+                    inDegree[cur]--;
+                    if(inDegree[cur] == 0)
+                    {
+                        queue.Enqueue(cur);
+                    }
+                }
+            }
+
+            return numCourses == 0;
+        }
+
     }
 }
