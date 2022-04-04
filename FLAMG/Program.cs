@@ -163,9 +163,16 @@ namespace FLAMG
             //FindTheMissingNumberII fm = new FindTheMissingNumberII();
             //Console.WriteLine(fm.FindMissing2(n, str));
 
-            string s = ")()())";
-            var lvp = new LongestValidParentheses();
-            Console.WriteLine(lvp.LongestValidParentheses_DP(s));
+            //string s = ")()())";
+            //var lvp = new LongestValidParentheses();
+            //Console.WriteLine(lvp.LongestValidParentheses_DP(s));
+
+            int[] prices = new int[] { 7, 1, 5, 3, 6, 4 };
+            var bi = new BeaconfireInterview();
+            int maxProfit = bi.MaxProfit(prices);
+
+            Console.WriteLine(maxProfit);
+
 
         }        
     }

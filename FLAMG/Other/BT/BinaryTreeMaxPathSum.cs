@@ -100,14 +100,14 @@ namespace FLAMG.Other.BT
             return res3;
         }
 
-        public int PathSumIII_Prefix(TreeNode root, int targetSum)
-        {
+        //public int PathSumIII_Prefix(TreeNode root, int targetSum)
+        //{
 
-        }
-        public int DFS(TreeNode root, Dictionary<long, int> prefix, long curr, int targetSum)
-        {
+        //}
+        //public int DFS(TreeNode root, Dictionary<long, int> prefix, long curr, int targetSum)
+        //{
 
-        }
+        //}
 
     }
 }
