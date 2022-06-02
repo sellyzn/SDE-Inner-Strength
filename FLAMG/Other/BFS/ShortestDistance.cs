@@ -7,12 +7,16 @@ namespace FLAMG.Other.BFS
     public class ShortestDistance
     {
         // 01 Matrix
+        //Given an m * n binary matrix, return the distance of the nearest o for each cell.
+        // the distance between two adjacent cells is 1.
         public int[][] UpdateMatrix(int[][] matrix)
         {
             int row = matrix.Length;
             int col = matrix[0].Length;
             if (row == 0 || col == 0)
                 return matrix;
+            //we must start from 0, to find 1. that is, enqueue 0 to queue.
+            //because the distance of 0 is 0, but the distance of 1 is not unique.
             //enqueue all 0 to the queue
             var queue = new Queue<int[]>();
             for (int i = 0; i < row; i++)
@@ -22,7 +26,7 @@ namespace FLAMG.Other.BFS
                     if (matrix[i][j] == 0)
                         queue.Enqueue(new int[] { i, j });
                     else
-                        ;
+                        matrix[i][j] = int.MaxValue;
                 }
             }
 
@@ -38,13 +42,16 @@ namespace FLAMG.Other.BFS
                     int new_x = x + dir[0];
                     int new_y = y + dir[1];
 
-                    if (matrix[new_x][new_y] == 1 && IsValid(matrix, new_x, new_y, visited))
+                    //if 
+                    //if (matrix[new_x][new_y] == 1 && IsValid(matrix, new_x, new_y, visited))
+                    if(matrix[new_x][new_y] > matrix[x][y] + 1 && IsValid(matrix, new_x, new_y, visited))
                     {
                         matrix[new_x][new_y] = matrix[x][y] + 1;
                         queue.Enqueue(new int[] { new_x, new_y });
                     }
                 }
             }
+            return matrix;
         }
         public bool IsValid(int[][] matrix, int x, int y, HashSet<int[]> visited)
         {
