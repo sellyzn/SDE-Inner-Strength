@@ -32,7 +32,7 @@ namespace FLAMG.Other.BFS
             }
             //2. BFS
             int days = 0;
-            var DIRECTIONS = new int[][] {new int[] {0, 1}, new int[] { 0, -1 }, new int[] { 1, 0 }, new int[] { -1, 0 }}
+            var DIRECTIONS = new int[][] { new int[] { 0, 1 }, new int[] { 0, -1 }, new int[] { 1, 0 }, new int[] { -1, 0 } };
             while(queue.Count > 0)
             {
                 days++;

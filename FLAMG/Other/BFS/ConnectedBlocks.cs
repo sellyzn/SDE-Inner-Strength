@@ -141,9 +141,70 @@ namespace FLAMG.Other.BFS
         }
 
 
+        // Max Area
 
+        public int MaxAreaOfIsland(int[][] grid)
+        {
+            // Corner case
+            // traverse the array, if find the 1, BFS to find the max area
+            // return the max area
+            int row = grid.Length;
+            if (row == 0)
+                return 0;
+            int col = grid[0].Length;
+            if (col == 0)
+                return 0;
+            var visited = new int[row,col];
+            var maxArea = 0;
+            for (int r = 0; r < row; r++)
+            {
+                for (int c = 0; c < col; c++)
+                {
+                    if(grid[r][c] == 1 && visited[r, c] != 1)
+                    {
+                        var curArea = BFS_Area(grid, r, c, visited);
+                        maxArea = Math.Max(maxArea, curArea);                    
+                    }
+                }
+            }
+            return maxArea;
+        }
 
+        public int BFS_Area(int[][] grid, int x, int y, int[,] visited)
+        {
+            var queue = new Queue<int[]>();
+            queue.Enqueue(new int[] { x, y });
+            visited[x, y] = 1;
+            var directions = new int[][] { new int[] { 0, 1 }, new int[] { 0, -1 }, new int[] { 1, 0 }, new int[] { -1, 0 } };
+            var curArea = 1;
+            while(queue.Count > 0)
+            {
+                var location = queue.Dequeue();
+                foreach (var dir in directions)
+                {
+                    var new_x = location[0] + dir[0];
+                    var new_y = location[1] + dir[1];
+                    if (IsValid_MaxArea(grid, new_x, new_y, visited))
+                    {
+                        curArea++;
+                        queue.Enqueue(new int[] { new_x, new_y });
+                        visited[new_x, new_y] = 1;
+                    }
+                }                
+            }
+            return curArea;
+        }
 
+        public bool IsValid_MaxArea(int[][] grid, int x, int y, int[,] visited)
+        {
+            if (x < 0 || y < 0 || x >= grid.Length || y >= grid[0].Length)
+                return false;
+            if (grid[x][y] == 0)
+                return false;
+            if (visited[x, y] == 1)
+                return false;
+            return true;
+        }
 
 
 
