@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FLAMG.Other.Gold.GoldIII
+namespace FLAMG.Other.Mock
 {
-    public class PriorityQueue<T> where T : IComparable<T>
+    public class MyPriorityQueue<T> where T : IComparable<T>
     {
         private SortedList<T, int> list = new SortedList<T, int>();
         private int count = 0;

@@ -324,14 +324,20 @@ namespace FLAMG
             //var result = ps.MinSubArrayLen_prefixSum(target, nums);
             //Console.WriteLine(result);
 
-            var lipm = new LongestIncreasingPathInAMatrix();
-            var matrix = new int[3][];
-            matrix[0] = new int[] { 9, 9, 4 };
-            matrix[1] = new int[] { 6, 6, 8 };
-            matrix[2] = new int[] { 2, 1, 1 };
-            var result = lipm.LongestIncreasingPath(matrix);
-            Console.WriteLine(matrix[0][0]);
+            //var lipm = new LongestIncreasingPathInAMatrix();
+            //var matrix = new int[3][];
+            //matrix[0] = new int[] { 9, 9, 4 };
+            //matrix[1] = new int[] { 6, 6, 8 };
+            //matrix[2] = new int[] { 2, 1, 1 };
+            //var result = lipm.LongestIncreasingPath(matrix);
+            //Console.WriteLine(matrix[0][0]);
 
+            var iw = new Interview();
+            var nums = new int[] { 2, 11, 7, 15 };
+            var target = 9;
+            var result = iw.TwoSumIndices(nums, target);
+            Console.WriteLine(result[0]);
+            Console.WriteLine(result[1]);
 
 
         }

@@ -10,11 +10,11 @@ namespace FLAMG.Other.Gold.GoldIII
     public class TopKLargestNumbersII
     {
         int maxSize;
-        PriorityQueue<int> minHeap;
+        MyPriorityQueue<int> minHeap;
         public TopKLargestNumbersII(int k)
         {
             maxSize = k;
-            minHeap = new PriorityQueue<int>();
+            minHeap = new MyPriorityQueue<int>();
         }
 
         public void Add(int num)
