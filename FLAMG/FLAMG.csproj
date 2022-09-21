@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Blind75\BinaryCategory\" />
     <Folder Include="ByteDance\Medium\" />
     <Folder Include="Linkedin\" />
   </ItemGroup>
