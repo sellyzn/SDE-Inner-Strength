@@ -47,7 +47,7 @@ namespace FLAMG.Blind75.DynamicProgrammingCategory
                 {
                     if(wordDictSet.Contains(s.Substring(start, end - start + 1)))
                     {
-                        queue.Enqueue(end + 1);   // 新的单词开始的地方
+                        queue.Enqueue(end + 1);   // end是当前单词结尾的index，而我们需要将新的单词开始的index放入queue
                         if (end == s.Length - 1)
                             return true;
                     }
@@ -58,6 +58,28 @@ namespace FLAMG.Blind75.DynamicProgrammingCategory
         }
 
         // DP
-
+        // dp[i]: 表示字符串s，index从0开始计算，长度为i的子串，能否被分割成句子。
+        // dp[0]表示字符串s为空时，能够被wordDict分割成句子。为true。
+        // dp[1]表示字符串s.Substring(0,1)，能否被wordDict分割成句子。
+        // ...
+        // dp[n]表示字符串s能否被wordDict分割成句子。
+        public bool WordBreak_DP(string s, IList<string> wordDict)
+        {
+            var wordDictSet = new HashSet<string>(wordDict);
+            var dp = new bool[s.Length + 1];
+            dp[0] = true;
+            for(int i = 1; i <= s.Length; i++)
+            {
+                for(int j = 0; j < i; j++)
+                {
+                    if(dp[j] && wordDictSet.Contains(s.Substring(j, i - j + 1)))
+                    {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+            return dp[s.Length];
+        }
     }
 }
